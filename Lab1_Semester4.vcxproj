@@ -127,7 +127,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="JSONSerializer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Serializer.cpp" />
+    <ClCompile Include="Student.cpp" />
+    <ClCompile Include="StudentsList.cpp" />
+    <ClCompile Include="TXTSerializer.cpp" />
+    <ClCompile Include="XMLSerializer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="JSONSerializer.h" />
+    <ClInclude Include="Serializer.h" />
+    <ClInclude Include="Student.h" />
+    <ClInclude Include="StudentsList.h" />
+    <ClInclude Include="TXTSerializer.h" />
+    <ClInclude Include="XMLSerializer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
