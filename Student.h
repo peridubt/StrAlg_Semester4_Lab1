@@ -10,6 +10,11 @@ private:
 	unsigned char course;
 	unsigned int group;
 public:
+	Student(std::string name = "", std::string surname = "", std::string middlename = "",
+		unsigned char course = 0, unsigned int group = 0) : 
+		name(name), surname(surname), middlename(middlename), 
+		course(course), group(group) { }
+
 	std::string get_name();
 	std::string get_surname();
 	std::string get_middlename();
