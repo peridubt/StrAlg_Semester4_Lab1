@@ -1,7 +1,7 @@
 #pragma once
 #include "Serializer.h"
 
-class XMLSerializer
+class XMLSerializer : Serializer
 {
 
 };
