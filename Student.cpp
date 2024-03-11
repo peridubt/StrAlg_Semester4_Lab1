@@ -72,7 +72,10 @@ std::istream& operator>>(std::istream& is, Student& student)
     student.set_middlename(middlename);
     student.set_course(course);
     student.set_group(group);
-    if (is.fail())
+    if (is.fail() && !is.eof())
+    {
+        is.clear();
         throw FailedToReadFile();
+    }
     return is;
 }

@@ -126,6 +126,8 @@ void read_from_file(StudentsList& list)
 		try
 		{
 			Student elem;
+			if (!list.get_list().empty())
+				list.get_list().clear();
 			while (fin >> elem)
 			{
 				list.get_list().push_back(elem);
