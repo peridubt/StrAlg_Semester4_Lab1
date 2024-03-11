@@ -57,8 +57,8 @@ std::ostream& operator<<(std::ostream& os, Student student)
     os << "Ôàìèëèÿ: " << student.get_surname()
         << "\nÈìÿ: " << student.get_name()
         << "\nÎò÷åñòâî: " << student.get_middlename()
-        << "\nÊóğñ:" << student.get_course()
-        << "\nÃğóïïà:" << student.get_group();
+        << "\nÊóğñ: " << student.get_course()
+        << "\nÃğóïïà: " << student.get_group();
     return os;
 }
 
@@ -72,5 +72,7 @@ std::istream& operator>>(std::istream& is, Student& student)
     student.set_middlename(middlename);
     student.set_course(course);
     student.set_group(group);
+    if (is.fail())
+        throw FailedToReadFile();
     return is;
 }

@@ -4,7 +4,7 @@
 #include "TXTSerializer.h"
 #include "XMLSerializer.h"
 
-struct FailedToReadFile {};
+
 
 class StudentsList
 {

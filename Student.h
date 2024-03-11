@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+struct FailedToReadFile {};
+
 class Student
 {
 private:
