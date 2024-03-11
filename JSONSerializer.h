@@ -5,6 +5,5 @@ class JSONSerializer : public Serializer
 {
 public:
 	JSONSerializer() {}
-	std::string operator()(const Student& student) override { return ""; }
+	void set_data(Student data) override;
 };
-

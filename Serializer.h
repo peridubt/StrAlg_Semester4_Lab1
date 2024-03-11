@@ -1,13 +1,15 @@
 #pragma once
-#include <string>
 #include "Student.h"
+#include <string>
 
 class Serializer
 {
-private:
-	std::string data;
+protected:
+	Student data;
+	std::string serialized_data;
 public:
-	Serializer() {}
-	virtual std::string operator()(const Student& student);
-	std::string get_data();
+	Serializer() { }
+	Serializer(Student data);
+	std::string get_serialized_data();
+	virtual void set_data(Student data);
 };

@@ -1,6 +1,4 @@
-#include <iostream>
-#include "Serializer.h"
-#include "JSONSerializer.h"
+#include "StudentsList.h"
 
 /*
 Ульянов Леонид, 91 группа
@@ -14,9 +12,6 @@
 
 int main()
 {
-	Student st;
-	JSONSerializer js;
-	std::string lol = js(st);
 	std::cin.get();
 	return 0;
 }
