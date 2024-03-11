@@ -66,20 +66,20 @@ void print_task_menu()
 		<< "2) имени;\n"
 		<< "3) отчеству;\n"
 		<< "4) курсу;\n"
-		<< "5) группе;\n"
+		<< "5) группе.\n"
 		<< "\nИли\n"
-		<< "0) вернуться назад.\n";
+		<< "0. Вернуться назад.\n";
 	std::cout << "\n->\t";
 }
 
 void print_serialization()
 {
-	std::cout << "Выполнить сериализацию через:\n"
-		<< "1) JSON;\n"
-		<< "2) TXT;\n"
-		<< "3) XML;\n"
+	std::cout << "Сохранить результат в формате:\n"
+		<< "1) .json;\n"
+		<< "2) .txt;\n"
+		<< "3) .xml.\n"
 		<< "\nИли\n"
-		<< "0) вернуться в главное меню.";
+		<< "0. Вернуться в главное меню.";
 	std::cout << "\n->\t";
 }
 
@@ -88,6 +88,7 @@ void print_main_menu() // Печать списка меню в консоль
 	std::cout << "1. Считать данные из файла.\n"
 		<< "2. Отфильтровать список по заданному параметру\n(множественный выбор).\n"
 		<< "3. Печать списка в консоль.\n"
+		<< "4. Сериализация всего списка.\n"
 		<< "0. Выход.\n";
 	std::cout << "\n->\t";
 }
@@ -151,7 +152,7 @@ void print_to_console(StudentsList students)
 		std::list<Student> students_list = students.get_list();
 		for (auto elem : students_list)
 		{
-			std::cout << "№" << ++i <<"\n";
+			std::cout << "№" << ++i << "\n";
 			std::cout << elem << "\n\n";
 		}
 	}
@@ -164,7 +165,7 @@ void serialization_execution(StudentsList list);
 void filter_execution(StudentsList list, std::string(Student::* get_value)())
 {
 	std::string parameter;
-	std::cout << "Введите параметр, используемый для фильтрации:\n";
+	std::cout << "Введите параметр, используемый для фильтрации:\t";
 	std::cin >> parameter;
 	StudentsList filtered;
 	filtered.set_list(list.filter(get_value, parameter));
@@ -175,7 +176,7 @@ void filter_execution(StudentsList list, std::string(Student::* get_value)())
 
 void filter_execution(StudentsList list, size_t(Student::* get_value)())
 {
-	std::cout << "Введите параметр, используемый для фильтрации:\n";
+	std::cout << "Введите параметр, используемый для фильтрации:\t";
 	size_t parameter = (size_t)integer_input();
 	StudentsList filtered;
 	filtered.set_list(list.filter(get_value, parameter));
@@ -192,7 +193,7 @@ void serialize(JSONSerializer js, StudentsList list)
 	std::list<Student> students = list.get_list();
 	std::string result = "[\n";
 	auto before_end = --students.end();
-	
+
 	for (auto iter = students.begin(); iter != students.end(); ++iter)
 	{
 		result += js.serialize(*iter);
@@ -200,7 +201,7 @@ void serialize(JSONSerializer js, StudentsList list)
 			result += ",\n";
 	}
 
-	result+= "\n]";
+	result += "\n]";
 	fout << result;
 	fout.close();
 }
@@ -324,6 +325,10 @@ void main_menu(StudentsList& list)
 			break;
 		case 3:
 			print_to_console(list);
+			break;
+		case 4:
+			serialization_execution(list);
+			break;
 		case 0:
 			std::cout << "Выход из программы...\n";
 			break;

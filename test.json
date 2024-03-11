@@ -2,22 +2,22 @@
 {
 	"surname": "Ульянов",
 	"name": "Леонид",
-	"middlename" ": Владимирович",
+	"middlename": "Владимирович",
 	"course": "2",
-	"group" ": 91"
+	"group": "91"
 },
 {
 	"surname": "Белозёров",
 	"name": "Алексей",
-	"middlename" ": Максимович",
+	"middlename": "Максимович",
 	"course": "2",
-	"group" ": 91"
+	"group": "91"
 },
 {
 	"surname": "Симонов",
 	"name": "Иван",
-	"middlename" ": Алексеевич",
+	"middlename": "Алексеевич",
 	"course": "2",
-	"group" ": 91"
+	"group": "91"
 }
 ]
