@@ -4,12 +4,7 @@
 
 class Serializer
 {
-protected:
-	Student data;
-	std::string serialized_data;
 public:
 	Serializer() { }
-	Serializer(Student data);
-	std::string get_serialized_data();
-	virtual void set_data(Student data);
+	virtual std::string serialize(Student data) const;
 };

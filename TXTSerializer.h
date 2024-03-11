@@ -4,7 +4,7 @@
 class TXTSerializer : public Serializer
 {
 public:
-	TXTSerializer() {}
-	void set_data(Student data) override;
+	TXTSerializer() { }
+	virtual std::string serialize(Student data) const;
 };
 

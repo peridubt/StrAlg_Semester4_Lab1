@@ -1,13 +1,13 @@
 #include "XMLSerializer.h"
 
-void XMLSerializer::set_data(Student data)
+std::string XMLSerializer::serialize(Student data) const
 {
-	this->data = data;
-	serialized_data = "<student>\n";
-	serialized_data += "<surname>" + std::string(data.get_surname()) + "</surname>\n";
-	serialized_data += "<name>" + std::string(data.get_name()) + "</name>\n";
-	serialized_data += "<middlename>" + std::string(data.get_middlename()) + "</middlename>\n";
-	serialized_data += "<course>" + std::to_string(data.get_coure()) + "</middlename>\n";
-	serialized_data += "<group>" + std::to_string(data.get_group()) + "</group>\n";
+	std::string serialized_data = "<student>\n";
+	serialized_data += "\t<surname>" + std::string(data.get_surname()) + "</surname>\n";
+	serialized_data += "\t<name>" + std::string(data.get_name()) + "</name>\n";
+	serialized_data += "\t<middlename>" + std::string(data.get_middlename()) + "</middlename>\n";
+	serialized_data += "\t<course>" + std::to_string(data.get_course()) + "</middlename>\n";
+	serialized_data += "\t<group>" + std::to_string(data.get_group()) + "</group>\n";
 	serialized_data += "</student>\n";
+	return serialized_data;
 }

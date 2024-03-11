@@ -1,0 +1,23 @@
+[
+{
+	"surname": "Ульянов",
+	"name": "Леонид",
+	"middlename": "Владимирович",
+	"course": "2",
+	"group": "91"
+},
+{
+	"surname": "Белозёров",
+	"name": "Алексей",
+	"middlename": "Максимович",
+	"course": "2",
+	"group": "91"
+},
+{
+	"surname": "Симонов",
+	"name": "Иван",
+	"middlename": "Алексеевич",
+	"course": "2",
+	"group": "91"
+}
+]

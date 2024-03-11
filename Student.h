@@ -18,7 +18,7 @@ public:
 	std::string get_name();
 	std::string get_surname();
 	std::string get_middlename();
-	size_t get_coure();
+	size_t get_course();
 	size_t get_group();
 
 	void set_name(std::string name);
@@ -29,3 +29,4 @@ public:
 };
 
 std::ostream& operator<<(std::ostream& os, Student student);
+std::istream& operator>>(std::istream& is, Student& student);

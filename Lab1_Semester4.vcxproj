@@ -143,6 +143,9 @@
     <ClInclude Include="TXTSerializer.h" />
     <ClInclude Include="XMLSerializer.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="data.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
