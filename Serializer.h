@@ -6,5 +6,6 @@ class Serializer
 {
 public:
 	Serializer() { }
+	~Serializer() { }
 	virtual std::string serialize(Student data) const;
 };
