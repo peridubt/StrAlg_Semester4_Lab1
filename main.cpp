@@ -239,38 +239,43 @@ void serialize(XMLSerializer xml, StudentsList list)
 void serialization_execution(StudentsList list)
 {
 	int choice = 10;
-	print_serialization();
-	while (choice > 3 || choice < 0)
+	if (!list.get_list().empty())
 	{
-		choice = integer_input();
-		switch (choice)
+		print_serialization();
+		while (choice > 3 || choice < 0)
 		{
-		case 1:
-		{
-			JSONSerializer js;
-			serialize(js, list);
-		}
-		break;
-		case 2:
-		{
-			TXTSerializer txt;
-			serialize(txt, list);
-		}
-		break;
-		case 3:
-		{
-			XMLSerializer xml;
-			serialize(xml, list);
-		}
-		break;
-		case 0:
-			std::cout << "Возврат в главное меню...\n";
+			choice = integer_input();
+			switch (choice)
+			{
+			case 1:
+			{
+				JSONSerializer js;
+				serialize(js, list);
+			}
 			break;
-		default:
-			std::cout << "Введённое число не является пунктом меню!\n";
+			case 2:
+			{
+				TXTSerializer txt;
+				serialize(txt, list);
+			}
 			break;
+			case 3:
+			{
+				XMLSerializer xml;
+				serialize(xml, list);
+			}
+			break;
+			case 0:
+				std::cout << "Возврат в главное меню...\n";
+				break;
+			default:
+				std::cout << "Введённое число не является пунктом меню!\n";
+				break;
+			}
 		}
 	}
+	else
+		std::cout << "Сериализация пустого списка невозможна!\n";
 }
 
 void task_menu(StudentsList& list)
